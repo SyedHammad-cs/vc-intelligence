@@ -12,7 +12,14 @@ export default function Home() {
 
       <Link href="/companies">
 
-        <button className="bg-black text-white px-4 py-2 rounded">
+        <button className="mt-4
+            bg-blue-600
+            text-white
+            px-5 py-2
+            rounded-lg
+            hover:bg-blue-700
+            transition
+            ">
           View Companies
         </button>
 

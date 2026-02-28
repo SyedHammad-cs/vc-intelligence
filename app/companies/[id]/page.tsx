@@ -13,26 +13,32 @@ export default async function CompanyProfile({ params }: any) {
   }
 
   return (
-    <div className="p-10">
-      <h1 className="text-3xl font-bold mb-4">{company.name}</h1>
+    <div className="max-w-2xl">
+      <div className="bg-white p-6 rounded-xl shadow-sm border">
+        <h1 className="text-3xl font-bold mb-4">{company.name}</h1>
 
-      <div className="space-y-2">
-        <p>
-          <span className="font-semibold">Industry:</span> {company.industry}
-        </p>
+        <div className="space-y-3">
+          <div>
+            <span className="text-gray-500">Industry</span>
+            <p className="font-semibold">{company.industry}</p>
+          </div>
 
-        <p>
-          <span className="font-semibold">Website:</span>{" "}
-          <a
-            href={company.website}
-            target="_blank"
-            className="text-blue-600 underline"
-          >
-            {company.website}
-          </a>
-        </p>
+          <div>
+            <span className="text-gray-500">Website</span>
+            <p>
+              <a
+                href={company.website}
+                target="_blank"
+                className="text-blue-600 hover:underline"
+              >
+                {company.website}
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <EnrichButton website={company.website} />
       </div>
-      <EnrichButton website={company.website} />
     </div>
   );
 }
